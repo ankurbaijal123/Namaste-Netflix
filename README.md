@@ -1,5 +1,7 @@
 # Netflix GPT
 * - Added Tailwind css 
+* - Login Page
+* - Sign Up Page 
 
 #Features
 * - Login/SignUp page
