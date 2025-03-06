@@ -3,7 +3,11 @@ import Header from "./Header";
 import React from "react";
 import { useState, useRef } from "react";
 import { checkValidate } from "../utils/validate";
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 
+import { auth } from "../utils/firebase"
+
+  
 const Login = () => {
   const [button, setButton] = useState("Sign In");
   const onClickHandler = () => {
@@ -20,15 +24,45 @@ const Login = () => {
   const handlebuttonclick = () =>{
     const message = checkValidate(email.current.value, password.current.value) 
     setErrorMessage(message)
+    if (message) return;
+    signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    console.log(user)
+  
+  }) 
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    setErrorMessage(errorCode + " - " +  errorMessage)
+  });
 
   }
-  const handlebuttonclickIn = () =>{
+  const handlebuttonclickSignup = () =>{
     const message = checkValidate(email.current.value, password.current.value) 
     console.log(confirmpassword.current.value)
     setErrorMessage(message)
     if (password.current.value !== confirmpassword.current.value) {
       setErrorMessage("Passwords do not match!");
-    } 
+    }  
+
+    if (message === null)(
+      //sign up
+      createUserWithEmailAndPassword(auth, email.current.value, password.current.value )
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    console.log(user)
+    // ...
+  })  
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    setErrorMessage(errorCode + " - " +  errorMessage)
+    // ..
+  })
+    )
 
   }
   return (
@@ -96,7 +130,7 @@ const Login = () => {
             <p className="text-red-500 font-bold text-lg py-2">{errorMessage}</p>
             <button type="submit"
             className="p-4 my-6 bg-red-700 w-full rounded-lg"
-            onClick={handlebuttonclickIn}>
+            onClick={handlebuttonclickSignup}>
               Sign Up
             </button>
             <p className="py-4 ">

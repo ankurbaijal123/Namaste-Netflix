@@ -7,7 +7,10 @@
 * - Use Ref Hook
 * - Firebase setup
 * - Deploying our app in Firebase
-
+* - Create SignUp User Account
+* - Implement Sign In user APi
+* - Create Redux store
+ 
 #Features
 * - Login/SignUp page
     -Sign Up /Sign In page
