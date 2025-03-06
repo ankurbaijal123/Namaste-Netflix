@@ -9,7 +9,9 @@
 * - Deploying our app in Firebase
 * - Create SignUp User Account
 * - Implement Sign In user APi
-* - Create Redux store
+* - Create Redux store with userSlice
+* - Implemented Sign Out Feature
+* - Ftech movies from TMDB Movies
  
 #Features
 * - Login/SignUp page
