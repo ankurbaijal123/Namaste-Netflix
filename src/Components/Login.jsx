@@ -4,9 +4,11 @@ import React from "react";
 import { useState, useRef } from "react";
 import { checkValidate } from "../utils/validate";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-
+import { addUser, removeUser } from "../utils/userSlice";
 import { auth } from "../utils/firebase"
 import { useNavigate } from "react-router-dom";
+import { background, profile } from "../utils/constants";
+import { useSelector, useDispatch } from "react-redux"
 
   
 const Login = () => {
@@ -21,6 +23,7 @@ const Login = () => {
   const confirmpassword = useRef(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handlebuttonclick = () =>{
     const message = checkValidate(email.current.value, password.current.value) 
@@ -58,13 +61,23 @@ const Login = () => {
     console.log(user)
     updateProfile(user, {
       displayName: name.current.value,
+      photoURL: profile,
       
     }).then(() => {
       // Profile updated!
+      const { uid, email, displayName, photoURL } = auth.currentUser;
+        dispatch(
+          addUser({
+            uid: uid,
+            email: email,
+            displayName: displayName,
+            photoURL: photoURL,
+          })
+        );
       navigate("/browse")
     }).catch((error) => {
       // An error occurred
-      setErrorMessage(error)
+      setErrorMessage(error.message)
     });
     
   })  
@@ -82,7 +95,7 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/638e9299-0637-42d1-ba39-54ade4cf2bf6/web/IN-en-20250203-TRIFECTA-perspective_46eb8857-face-4ea6-b901-dbf22b461369_small.jpg"
+          src={background}
           alt="background"
         ></img>
       </div>

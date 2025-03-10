@@ -12,6 +12,10 @@
 * - Create Redux store with userSlice
 * - Implemented Sign Out Feature
 * - Ftech movies from TMDB Movies
+* - Update Profile
+* - BugFix : SignUp user , display Name and navigate to login if user not logged in ,
+navigate to browse is user logged in
+* - Unsubscribed to the onAuthSateChange callback;  
  
 #Features
 * - Login/SignUp page
