@@ -16,6 +16,16 @@
 * - BugFix : SignUp user , display Name and navigate to login if user not logged in ,
 navigate to browse is user logged in
 * - Unsubscribed to the onAuthSateChange callback;  
+* - Register TMDBAPI & create an app and get acess token
+* - Use the api key to get movie list
+* - Movie slice 
+* - Update Store for Movie data
+* - Planning for Main & Secondary Container
+* - Custom hook for Now Playing Movie, Video Trailer
+* - Update Store with Trailer Video
+* - Added background Video (Embedded the Youtube Video)
+* - Added AutoPlay , Mute
+* - Added Tailwind CSS
  
 #Features
 * - Login/SignUp page

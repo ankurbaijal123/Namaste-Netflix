@@ -33,7 +33,7 @@ const Login = () => {
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    console.log(user)
+
     navigate("/browse")
   
   }) 
@@ -46,7 +46,7 @@ const Login = () => {
   }
   const handlebuttonclickSignup = () =>{
     const message = checkValidate(email.current.value, password.current.value) 
-    console.log(confirmpassword.current.value)
+    (confirmpassword.current.value)
     setErrorMessage(message)
     if (password.current.value !== confirmpassword.current.value) {
       setErrorMessage("Passwords do not match!");
@@ -58,7 +58,7 @@ const Login = () => {
   .then((userCredential) => {
     // Signed up 
     const user = userCredential.user;
-    console.log(user)
+
     updateProfile(user, {
       displayName: name.current.value,
       photoURL: profile,
