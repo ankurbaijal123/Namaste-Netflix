@@ -26,6 +26,18 @@ navigate to browse is user logged in
 * - Added background Video (Embedded the Youtube Video)
 * - Added AutoPlay , Mute
 * - Added Tailwind CSS
+* - Build Secondary Component
+* - Build MovieList
+Build Movie Card
+* - TMDB Image CDN Url
+* - Browse Page with Tailwind CSS
+* - usePopular custom hook
+* - useTopRated Hook
+* - useUpComing Hook
+* - GPT Search Feature
+* - GPT Search Bar
+* - (Bonus I Added) Multi-Language Feature in our App
+* - Integrated Open AI API
  
 #Features
 * - Login/SignUp page

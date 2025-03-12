@@ -6,17 +6,29 @@ import { useSelector, useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { onAuthStateChanged } from "firebase/auth";
 import { logo, profile } from "../utils/constants";
-
+import { toggleGptSearchView } from "../utils/gptSlice";
+import { Supported_Language } from "../utils/constants";
+import { changeLanguage } from "../utils/configSlice";
 const Header = () => {
   const [dropDown, setDropDown] = useState(false);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
+  const showGptSearch = useSelector(store => store.gpt.showGptSearch)
+  const handleLanguageChange =(e) =>{
+    dispatch (changeLanguage(e.target.value))
+  }
   // Toggle Dropdown
   const dropdownClicked = () => {
     setDropDown((prev) => !prev);
   };
+
+  const handleGPTSearch = () =>{
+    //Toggle my gpt search here
+    dispatch(toggleGptSearchView());
+
+  }
 
   const handleSignout = () => {
     signOut(auth)
@@ -73,6 +85,16 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <div className="text-xl font-semibold text-white shadow-md bg-gray-900 px-4 py-2 rounded-lg">
               Welcome {user.displayName}
+            </div>
+
+            <div className = "flex p-2">
+            {showGptSearch && <select className="p-2 m-2 bg-gray-900 text-white" onChange={handleLanguageChange}>
+            {Supported_Language.map(lang => (
+              <option key={lang.identifier} value={lang.identifier}>
+              {lang.name}</option>
+            ))}
+            </select>}
+            <button className="p-2 mx-2 bg-purple-800 text-white text-xl rounded-xl cursor-pointer" onClick={handleGPTSearch}>{showGptSearch ? "HomePage" : "GPT Search" }</button>
             </div>
 
             <div className="relative" ref={dropdownRef}>
