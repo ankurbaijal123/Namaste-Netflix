@@ -73,6 +73,5 @@ export const Supported_Language = [
   ];
   
 
-  export const OpenAI_Key = "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";
-
+  
   export const GeminiAPI = "AIzaSyBmKGVJUeoCK6F1QgPlFBCxxYDqV7RS4H8"
