@@ -19,9 +19,7 @@ const VideoPlay = ({ movieid }) => {
       store.movies?.addPopularMovies?.find((movie) => movie.id === id) ||
       store.movies?.addTopRated?.find((movie) => movie.id === id) ||
       store.movies?.addUpcoming?.find((movie) => movie.id === id) ||
-      store.gpt?.movieResults
-  ?.flat() // Flatten nested arrays
-  ?.find((movie) => movie.id === id)
+      store.gpt?.movieResults?.flat()?.find((movie) => movie.id === id)
 
     );
   });
@@ -41,8 +39,8 @@ const VideoPlay = ({ movieid }) => {
 
       {/* Movie Details Overlay */}
       <div className="absolute top-1/4 left-10 z-10 max-w-xl">
-        <h1 className="text-4xl font-bold mb-4">{data.title || 'Movie Not Found'}</h1>
-        <p className="text-lg mb-4">{data.overview || 'No description available.'}</p>
+        <h1 className="text-4xl font-bold mb-4">{data?.title || 'Movie Not Found'}</h1>
+        <p className="text-lg mb-4">{data?.overview || 'No description available.'}</p>
         
       </div>
     </div>
