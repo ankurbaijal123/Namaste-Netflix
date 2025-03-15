@@ -25,3 +25,5 @@ yarn-error.log*
 # Ignore Firebase and Constants files
 src/utils/firebase.jsx
 src/utils/constant.js
+
+.env

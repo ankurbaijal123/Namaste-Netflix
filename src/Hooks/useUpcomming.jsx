@@ -6,8 +6,9 @@ import {addUpcoming} from "../utils/movieSlice";
 const useUpcomming = () => {
   const [movieData, setMovieData] = useState(null)
   const dispatch = useDispatch();
+  const Upcoming = useSelector(store => store.movies.addUpcoming)
     useEffect(() => {
-      getNowPlayingMovies();
+      !Upcoming && getNowPlayingMovies();
     }, []);
   
     const getNowPlayingMovies = async () =>{
