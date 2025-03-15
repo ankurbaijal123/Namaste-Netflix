@@ -1,9 +1,11 @@
 import React, { useRef } from "react";
 import MovieCard from "./MovieCard";
-
+import Shimmer from "./Shimmer";
 const MovieList = ({ title, movies }) => {
   const scrollRef = useRef(null);
-  console.log(movies)
+  if(!movies) return (
+    <Shimmer />
+  )
 
   const handleScroll = (direction) => {
     if (scrollRef.current) {

@@ -6,6 +6,7 @@ import client from "../utils/openAI";
 import genAI from "../utils/gemini";
 import { API_OPTIONS } from "../utils/constants";
 import { addGptMovieResult } from "../utils/gptSlice";
+import Shimmer from "./Shimmer";
 
 const GptSearchBar = () => {
   const [Searchresult, setSearchresult] = useState(null);
@@ -37,7 +38,7 @@ const GptSearchBar = () => {
 
     if (Searchresult === null) {
       //error handling
-      return
+      <Shimmer />
     }
     const gptMovies = Searchresult.split(", ");
     // for each movie search TMDB API

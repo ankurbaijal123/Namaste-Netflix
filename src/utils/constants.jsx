@@ -5,6 +5,14 @@ export const profile =
 export const background =
   "https://assets.nflxext.com/ffe/siteui/vlv3/638e9299-0637-42d1-ba39-54ade4cf2bf6/web/IN-en-20250203-TRIFECTA-perspective_46eb8857-face-4ea6-b901-dbf22b461369_small.jpg";
 
+export const API_OPTIONS = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkYTM5N2ZmYTM5NDYzOTdhOGNiYWFhYWZjNTUxOWJjYyIsIm5iZiI6MTc0MTYyOTY4Mi4wNTksInN1YiI6IjY3Y2YyOGYyYThiMzM1MjU3ZTJhYjcwYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1r0w9E60pEI2R1wOnEMhp1gxOSwBbW0bybwH0PlwO-8",
+  },
+};
 
 
 export const Image_CDN = "https://image.tmdb.org/t/p/w500";
@@ -65,13 +73,6 @@ export const Supported_Language = [
   ];
   
 
-  export const API_OPTIONS = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization: `Bearer ${import.meta.env.VITE_TMDB_API}`,
-    }
-  };
-  
-  export const OpenAI_Key = import.meta.env.VITE_OpenAI_Key || "";
-  export const GeminiAPI = import.meta.env.VITE_GeminiAPI || "";
+  export const OpenAI_Key = "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";
+
+  export const GeminiAPI = "AIzaSyBmKGVJUeoCK6F1QgPlFBCxxYDqV7RS4H8"

@@ -6,7 +6,7 @@ import Shimmer from './Shimmer'
 const MainContainer = () => {
     const movies = useSelector(store => store.movies?.addNowPlayingMovies)
     if(!movies) return (
-      <Shimmer />
+      null
     )
     const mainmovie = movies[0];
     const { original_title, overview, id, poster_path, release_date, vote_average } = mainmovie;
