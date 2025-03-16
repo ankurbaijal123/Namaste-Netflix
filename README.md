@@ -78,7 +78,7 @@ npm start
 ---
 
 
-  ###🚀 Deployment
+## 🚀 Deployment
 The project is deployed on Firebase.
 
 🔗 Live Demo: https://namastemovie-81eb3.web.app/
