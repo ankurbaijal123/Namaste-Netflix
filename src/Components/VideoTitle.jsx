@@ -26,18 +26,22 @@ const VideoTitle = ({ title, overview, id, poster_path, release_date, vote_avera
   };
 
   return (
-    <div className="w-screen aspect-video pt-[20%] px-24 absolute text-white bg-gradient-to-r from-black">
-      <h1 className="text-6xl font-bold">{title}</h1>
-      <p className="py-6 text-lg w-1/4">{overview}</p>
-      <div className="">
-        <button className="p-4 bg-white text-black font-bold px-12 text-xl rounded-lg hover:bg-gray-300 cursor-pointer" onClick={handleClick}>
-          ▶ Play
-        </button>
+    <div className="w-screen aspect-video pt-[20%] px-6 md:px-24 absolute text-white bg-gradient-to-r from-black">
+      <h1 className="text-xl md:text-6xl font-bold">{title}</h1>
+      <p className="hidden md:inline-block py-6  w-1/4">{overview}</p>
+      <div className="my-4 md:m-0">
+      <button
+      className=" bg-white text-black  md:py-4 px-3 md:px-12 font-bold text-xl rounded-lg hover:bg-gray-600 cursor-pointer"
+      onClick={handleClick}
+    >
+    🎬 Play
+    </button>
+    
         <button
-          className="mx-2 p-4 bg-white text-black font-bold px-12 text-xl rounded-lg hover:bg-gray-300 cursor-pointer"
+          className="hidden md:inline-block mx-2 p-4 bg-white text-black font-bold px-12 text-xl rounded-lg hover:bg-gray-400 cursor-pointer"
           onClick={handleMoreInfoClick}
         >
-          ℹ More Info
+        🛈 More Info
         </button>
       </div>
 

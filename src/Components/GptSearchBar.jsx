@@ -42,7 +42,7 @@ const GptSearchBar = () => {
     }
     const gptMovies = Searchresult.split(", ");
     // for each movie search TMDB API
-    console.log(gptMovies)
+    
 
     const eachMoviePromise = gptMovies.map((movie) =>
       searchMovieTMDB(movie)
@@ -50,7 +50,6 @@ const GptSearchBar = () => {
       //[Promise,Promise,Promise,Promise,Promise]
     );
     const tmdbResults = await Promise.all(eachMoviePromise);
-    console.log(tmdbResults)
     dispatch(addGptMovieResult({searchedText: searchText.current.value, movieNames : gptMovies, movieResults : tmdbResults}))
   };
   const movies = useSelector(store => store.gpt?.gptMovies)
@@ -58,23 +57,24 @@ const GptSearchBar = () => {
   const language = useSelector((store) => store.config.lang);
 
   return (
-    <div className="pt-[8%] flex justify-center">
+    <div className="pt-[35%] md:pt-[8%] flex justify-center">
+
       <form
-        className="w-1/2 bg-black grid grid-cols-12 text-white"
+        className="w-full md:w-1/2 bg-black grid grid-cols-12 text-white"
         onSubmit={(e) => e.preventDefault()}
       >
         <input
           ref={searchText}
           type="text"
           className="p-4 m-4 col-span-9 border border-gray-300"
-          placeholder={lang?.[language].gptSearchPlaceHolder}
+          placeholder={lang?.[language].gptSearchPlaceHolder} 
         ></input>
 
         <button
           className="col-span-3 m-4 py-2 px-4 bg-red-600 rounded-3xl text-white cursor-pointer"
           onClick={handleGPTSearchClick}
         >
-          {lang?.[language].search}
+          {lang?.[language].search} 🔍︎
         </button>
       </form>
 

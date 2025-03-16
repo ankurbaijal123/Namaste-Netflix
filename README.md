@@ -38,6 +38,16 @@ Build Movie Card
 * - GPT Search Bar
 * - (Bonus I Added) Multi-Language Feature in our App
 * - Integrated Open AI API
+* - Gemini API
+* - Memorization
+* - Fetch Movies
+* - Movie Video and details from TMDB
+* - GPT SLICE
+* - MovieList , MovieVideo Component
+* - .env file 
+* - Css of Mobile
+
+
  
 #Features
 * - Login/SignUp page

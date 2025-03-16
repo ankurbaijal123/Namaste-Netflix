@@ -11,7 +11,7 @@ const MainContainer = () => {
     const mainmovie = movies[0];
     const { original_title, overview, id, poster_path, release_date, vote_average } = mainmovie;
   return (
-    <>
+    <div className="pt-[30%] bg-black md:pt-0">
       <VideoTitle
         title={original_title}
         overview={overview}
@@ -21,7 +21,7 @@ const MainContainer = () => {
         vote_average={vote_average}
       />
     <VideoBackground movieId={id}/>  
-    </>
+    </div>
   ) 
 }
 
