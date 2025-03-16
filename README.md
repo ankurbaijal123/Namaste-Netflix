@@ -63,9 +63,6 @@ git clone https://github.com/ankurbaijal123/netflix-gpt.git
 cd netflix-gpt
 
 ### 2️⃣Install Dependencies
-sh
-Copy
-Edit
 npm install
 
 
@@ -79,9 +76,7 @@ Register on TMDB
 Get an API key & add it to the .env file
 
 ###5️⃣ Run the Project
-sh
-Copy
-Edit
+
 npm start
 
 ## 🚀 Deployment
