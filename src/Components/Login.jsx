@@ -98,7 +98,7 @@ const Login = () => {
               Sign In
             </button>
             <p className="py-4 cursor-pointer">
-              New to Netflix? <button className="cursor-pointer" onClick={onClickHandler}>Sign Up</button> Now
+              New to Namaste Movie? <button className="cursor-pointer" onClick={onClickHandler}>Sign Up</button> Now
             </p>
           </>
         ) : (

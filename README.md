@@ -1,4 +1,4 @@
-# Netflix GPT
+# Namaste Movie
 * - Added Tailwind css 
 * - Riuting form
 * - Login Page

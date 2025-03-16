@@ -5,10 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { onAuthStateChanged } from "firebase/auth";
-import { logo, profile } from "../utils/constants";
+import { profile } from "../utils/constants";
 import { toggleGptSearchView } from "../utils/gptSlice";
 import { Supported_Language } from "../utils/constants";
 import { changeLanguage } from "../utils/configSlice";
+import logo from "../../logo.png";
 const Header = () => {
   const [dropDown, setDropDown] = useState(false);
   const dropdownRef = useRef(null);
@@ -78,7 +79,7 @@ const Header = () => {
   return (
     <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between">
       {/* Netflix Logo */}
-      <img className="w-44 mx-auto md:mx-0" src={logo} alt="logo" />
+      <img className="w-25 mx-auto md:mx-0" src={logo} alt="logo" />
 
       {user && (
         <>
