@@ -1,63 +1,83 @@
-# Namaste Movie
-* - Added Tailwind css 
-* - Riuting form
-* - Login Page
-* - Sign Up Page 
-* - Form Validation 
-* - Use Ref Hook
-* - Firebase setup
-* - Deploying our app in Firebase
-* - Create SignUp User Account
-* - Implement Sign In user APi
-* - Create Redux store with userSlice
-* - Implemented Sign Out Feature
-* - Ftech movies from TMDB Movies
-* - Update Profile
-* - BugFix : SignUp user , display Name and navigate to login if user not logged in ,
-navigate to browse is user logged in
-* - Unsubscribed to the onAuthSateChange callback;  
-* - Register TMDBAPI & create an app and get acess token
-* - Use the api key to get movie list
-* - Movie slice 
-* - Update Store for Movie data
-* - Planning for Main & Secondary Container
-* - Custom hook for Now Playing Movie, Video Trailer
-* - Update Store with Trailer Video
-* - Added background Video (Embedded the Youtube Video)
-* - Added AutoPlay , Mute
-* - Added Tailwind CSS
-* - Build Secondary Component
-* - Build MovieList
-Build Movie Card
-* - TMDB Image CDN Url
-* - Browse Page with Tailwind CSS
-* - usePopular custom hook
-* - useTopRated Hook
-* - useUpComing Hook
-* - GPT Search Feature
-* - GPT Search Bar
-* - (Bonus I Added) Multi-Language Feature in our App
-* - Integrated Open AI API
-* - Gemini API
-* - Memorization
-* - Fetch Movies
-* - Movie Video and details from TMDB
-* - GPT SLICE
-* - MovieList , MovieVideo Component
-* - .env file 
-* - Css of Mobile
+# 🎬 Namaste Movie – AI-Powered Movie Streaming App  
+
+🚀 **Namaste Movie** is a **React-based movie streaming platform** that provides a seamless browsing experience with **AI-powered recommendations, live movie data from TMDB, and a modern, responsive UI**.  
+
+🔍 **Key Highlights:**  
+✅ AI-Powered **GPT Search** (OpenAI & Gemini APIs)  
+✅ **Background Autoplay Trailers** for an immersive experience  
+✅ **Multi-Language Support**  
+✅ **User Authentication** with Firebase  
+✅ **Optimized API Calls & Lazy Loading** for performance  
+
+---
+
+## ✨ Features  
+
+### 🔐 Authentication System  
+- ✅ **Sign Up / Sign In** (Firebase Authentication)  
+- ✅ **Form Validation & Secure User Sessions**  
+- ✅ **Persistent Login & User Profile Updates**  
+
+### 🎥 Movie Browsing Experience  
+- ✅ **Home Page with Categorized Movies**  
+- ✅ **Real-time Movie Data** (Popular, Top-Rated, Upcoming from TMDB API)  
+- ✅ **Background Autoplay Trailers** (Fetched dynamically)  
+
+### 🔍 AI-Powered Search & Recommendations  
+- ✅ **GPT-Powered Search Bar** (OpenAI & Gemini APIs)  
+- ✅ **Smart Movie Suggestions**  
+- ✅ **Multi-Language Support** (Localized search results)  
+
+### 🎭 Movie Details & Playback  
+- ✅ **Movie Information, Ratings, and Trailers**  
+- ✅ **Optimized Video Streaming**  
+
+### 🏗️ Advanced Features  
+- ✅ **Custom Hooks** (`usePopular`, `useTopRated`, `useUpComing`)  
+- ✅ **Redux Store Implementation** (Efficient State Management)  
+- ✅ **Lazy Loading & API Optimization**  
+
+### 🎨 Modern UI & Styling  
+- ✅ **Tailwind CSS for a Responsive & Modern Look**  
+- ✅ **Mobile-Friendly UI with Smooth Animations**  
+
+---
+
+## 🔧 Setup & Installation  
+
+### 📌 Prerequisites  
+Ensure you have **Node.js** and **npm** installed.  
+
+#### 1️⃣ Clone the Repository  
+```sh
+git clone https://github.com/ankurbaijal123/netflix-gpt.git
+cd netflix-gpt
+
+### 2️⃣Install Dependencies
+```sh
+Copy
+Edit
+npm install
 
 
- 
-#Features
-* - Login/SignUp page
-    -Sign Up /Sign In page
-    -redirect to Browse Page
+###3️⃣ Set Up Firebase
+Go to Firebase Console
+Create a project & enable Email/Password Authentication
+Add Firebase SDK credentials to a .env file
 
-* - Header(after authentication )
-* - Main Movie - Background Move playing
-    - Trailer in Backgorund
-    - Title & Description
-    - Movie Suggestions
-        - List Of Movies
-        - Vertical Scrollable 
+###4️⃣ Set Up TMDB API
+Register on TMDB
+Get an API key & add it to the .env file
+
+###5️⃣ Run the Project
+```sh
+Copy
+Edit
+npm start
+
+
+###🚀 Deployment
+The project is deployed on Firebase.
+
+🔗 Live Demo: https://namastemovie-81eb3.web.app/browse
+📂 GitHub Repository: https://github.com/ankurbaijal123/Namaste-Netflix/
