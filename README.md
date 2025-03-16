@@ -75,8 +75,10 @@ Copy
 Edit
 npm start
 
+---
 
-###🚀 Deployment
+
+  ###🚀 Deployment
 The project is deployed on Firebase.
 
 🔗 Live Demo: https://namastemovie-81eb3.web.app/
@@ -84,7 +86,7 @@ The project is deployed on Firebase.
 
 ---
 
-### Demo
+  ### Demo
 ![image](https://github.com/user-attachments/assets/298ef23b-a6fd-409a-bc83-6e00776666f4)
 ![image](https://github.com/user-attachments/assets/74410f82-c31b-4096-885f-170b3af09942)
 ![image](https://github.com/user-attachments/assets/d3fb4c1d-fe14-46f2-a40e-f78eb1db86fe)
