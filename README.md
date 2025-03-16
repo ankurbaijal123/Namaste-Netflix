@@ -43,16 +43,6 @@
 
 ---
 
-
-
-## 🚀 Deployment
-The project is deployed on Firebase.
-
-🔗 Live Demo: https://namastemovie-81eb3.web.app/
-📂 GitHub Repository: https://github.com/ankurbaijal123/Namaste-Netflix/
-
----
-
   ### Demo
 ![image](https://github.com/user-attachments/assets/298ef23b-a6fd-409a-bc83-6e00776666f4)
 ![image](https://github.com/user-attachments/assets/74410f82-c31b-4096-885f-170b3af09942)
@@ -61,6 +51,42 @@ The project is deployed on Firebase.
 ![image](https://github.com/user-attachments/assets/511266f4-589c-42a6-91b2-8b500001f928)
 
 
+## 🔧 Setup & Installation  
 
+### 📌 Prerequisites  
+Ensure you have **Node.js** and **npm** installed.  
+
+#### 1️⃣ Clone the Repository  
+sh
+git clone https://github.com/ankurbaijal123/netflix-gpt.git
+cd netflix-gpt
+
+### 2️⃣Install Dependencies
+sh
+Copy
+Edit
+npm install
+
+
+###3️⃣ Set Up Firebase
+Go to Firebase Console
+Create a project & enable Email/Password Authentication
+Add Firebase SDK credentials to a .env file
+
+###4️⃣ Set Up TMDB API
+Register on TMDB
+Get an API key & add it to the .env file
+
+###5️⃣ Run the Project
+sh
+Copy
+Edit
+npm start
+
+## 🚀 Deployment
+The project is deployed on Firebase.
+
+🔗 Live Demo: https://namastemovie-81eb3.web.app/
+📂 GitHub Repository: https://github.com/ankurbaijal123/Namaste-Netflix/
 
 
