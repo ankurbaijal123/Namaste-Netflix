@@ -79,5 +79,19 @@ npm start
 ###🚀 Deployment
 The project is deployed on Firebase.
 
-🔗 Live Demo: https://namastemovie-81eb3.web.app/browse
+🔗 Live Demo: https://namastemovie-81eb3.web.app/
 📂 GitHub Repository: https://github.com/ankurbaijal123/Namaste-Netflix/
+
+---
+
+### Demo
+![image](https://github.com/user-attachments/assets/298ef23b-a6fd-409a-bc83-6e00776666f4)
+![image](https://github.com/user-attachments/assets/74410f82-c31b-4096-885f-170b3af09942)
+![image](https://github.com/user-attachments/assets/d3fb4c1d-fe14-46f2-a40e-f78eb1db86fe)
+![image](https://github.com/user-attachments/assets/78303e99-565d-4594-a77f-2b35f6d283b3)
+![image](https://github.com/user-attachments/assets/511266f4-589c-42a6-91b2-8b500001f928)
+
+
+
+
+
