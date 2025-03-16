@@ -43,39 +43,6 @@
 
 ---
 
-## 🔧 Setup & Installation  
-
-### 📌 Prerequisites  
-Ensure you have **Node.js** and **npm** installed.  
-
-#### 1️⃣ Clone the Repository  
-```sh
-git clone https://github.com/ankurbaijal123/netflix-gpt.git
-cd netflix-gpt
-
-### 2️⃣Install Dependencies
-```sh
-Copy
-Edit
-npm install
-
-
-###3️⃣ Set Up Firebase
-Go to Firebase Console
-Create a project & enable Email/Password Authentication
-Add Firebase SDK credentials to a .env file
-
-###4️⃣ Set Up TMDB API
-Register on TMDB
-Get an API key & add it to the .env file
-
-###5️⃣ Run the Project
-```sh
-Copy
-Edit
-npm start
-
----
 
 
 ## 🚀 Deployment
