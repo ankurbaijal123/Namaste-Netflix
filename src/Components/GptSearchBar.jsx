@@ -1,8 +1,6 @@
-import React, { use, useState } from "react";
+import React, { useState, useRef } from "react";
 import lang from "../utils/languageConstants";
 import { useDispatch, useSelector } from "react-redux";
-import { useRef } from "react";
-import client from "../utils/openAI";
 import genAI from "../utils/gemini";
 import { API_OPTIONS } from "../utils/constants";
 import { addGptMovieResult } from "../utils/gptSlice";
@@ -11,75 +9,68 @@ import Shimmer from "./Shimmer";
 const GptSearchBar = () => {
   const [Searchresult, setSearchresult] = useState(null);
   const searchText = useRef(null);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const searchMovieTMDB = async (movie) => {
     const data = await fetch(
-      "https://api.themoviedb.org/3/search/movie?query=" +
-        movie +
-        "&include_adult=false&page=1",
+      `https://api.themoviedb.org/3/search/movie?query=${movie}&include_adult=false&page=1`,
       API_OPTIONS
     );
     const json = await data.json();
-
-    return json.results
+    return json.results;
   };
 
   const handleGPTSearchClick = async () => {
-    const gptQuery =
-      "Act as a Movie Recommendation System and suggest some movie for the query" +
-      searchText.current.value +
-      "only give me names of 5 Movies include Indian Bollywod Movies, comma seperated like the example result given ahead . Example Result: Chawa, Sholay, Dom, 3 Idiots, Ham Aapke hai kon";
-    //Make an api call to open ai to get Movie Results
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const gptQuery = `
+      Act as a Movie Recommendation System and suggest some movies for the query "${searchText.current.value}".
+      Only give me names of 5 movies, including Indian Bollywood movies, comma-separated.
+      Example Result: Chawa, Sholay, Dom, 3 Idiots, Hum Aapke Hain Kaun.
+    `;
 
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const result = await model.generateContent(gptQuery);
     setSearchresult(result.response.text());
 
-    if (Searchresult === null) {
-      //error handling
-      <Shimmer />
-    }
+    if (Searchresult === null) return <Shimmer />;
+
     const gptMovies = Searchresult.split(", ");
-    // for each movie search TMDB API
-    
-
-    const eachMoviePromise = gptMovies.map((movie) =>
-      searchMovieTMDB(movie)
-      //will get array of promises
-      //[Promise,Promise,Promise,Promise,Promise]
-    );
+    const eachMoviePromise = gptMovies.map((movie) => searchMovieTMDB(movie));
     const tmdbResults = await Promise.all(eachMoviePromise);
-    dispatch(addGptMovieResult({searchedText: searchText.current.value, movieNames : gptMovies, movieResults : tmdbResults}))
-  };
-  const movies = useSelector(store => store.gpt?.gptMovies)
 
+    dispatch(
+      addGptMovieResult({
+        searchedText: searchText.current.value,
+        movieNames: gptMovies,
+        movieResults: tmdbResults,
+      })
+    );
+  };
+
+  const movies = useSelector((store) => store.gpt?.gptMovies);
   const language = useSelector((store) => store.config.lang);
 
   return (
-    <div className="pt-[50%] md:pt-[8%] flex justify-center">
-
+    <div className="pt-[60%] md:pt-[15%] flex justify-center">
       <form
-        className="w-97 md:w-1/2 bg-black grid grid-cols-12 text-white"
+        className="w-full md:w-1/2 bg-black p-4 md:p-6 rounded-lg shadow-md grid grid-cols-12 text-white"
         onSubmit={(e) => e.preventDefault()}
       >
+      
         <input
           ref={searchText}
           type="text"
-          className="p-4 m-4 col-span-9 border border-gray-300"
-          placeholder={lang?.[language].gptSearchPlaceHolder} 
-        ></input>
+          className="p-3 md:p-4 m-2 md:m-4 col-span-9 border border-gray-500 bg-gray-800 text-white placeholder-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+          placeholder={lang?.[language].gptSearchPlaceHolder}
+        />
 
+       
         <button
-          className="col-span-3 m-4 py-2 px-4 bg-red-600 rounded-3xl text-white cursor-pointer"
+          className="col-span-3 m-2 md:m-4 py-3 px-4 bg-red-600 rounded-md text-white font-medium hover:bg-red-700 transition-all duration-300 cursor-pointer"
           onClick={handleGPTSearchClick}
         >
-          {lang?.[language].search} 🔍︎
+          {lang?.[language].search} 🔍
         </button>
       </form>
-
-     
-      
     </div>
   );
 };

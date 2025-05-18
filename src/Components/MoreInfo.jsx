@@ -31,7 +31,14 @@ const MoreInfo = ({ movie, onClose }) => {
           <div className="ml-6 flex-1">
             <h2 className="text-3xl font-bold">{movie.title}</h2>
             <p className="text-lg mt-2">{movie.overview}</p>
-            <p className="mt-4 text-sm text-gray-400">Release Date: {movie.release_date}</p>
+            <p className="mt-4 text-sm text-gray-400">
+  Release Date: {new Date(movie.release_date).toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  })}
+</p>
+
             <p className="mt-2 text-sm text-gray-400">Vote Average: {movie.vote_average}</p>
             <div className="mt-4">
               <button

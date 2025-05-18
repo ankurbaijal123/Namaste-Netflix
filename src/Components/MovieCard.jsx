@@ -9,7 +9,7 @@ const MovieCard = ({ id, posterPath }) => {
     navigate('/movie/' + id)
   }
   return (
-    <div className="w-25 md:w-48 relative flex-none group" onClick={handleClick}>
+    <div className="w-29 md:w-48 relative flex-none group" onClick={handleClick}>
       <img
         className="w-full h-64 object-cover rounded-lg"
         src={`${Image_CDN}${posterPath}`}
